@@ -8,7 +8,6 @@ export PLUGINSLUG="$(basename $DIR)"  #must match with wordpress.org plugin slug
 export MAINFILE="$PLUGINSLUG.php" # this should be the name of your main php file in the wordpress plugin
 
 ##### YOU CAN STOP EDITING HERE #####
-CURRENTDIR=`pwd`
 
 # git config
 GITPATH="$DIR/" # this file should be in the base of your git repository
@@ -171,7 +170,10 @@ bin
 map.conf
 nginx.log
 tests
-phpunit.xml" "$SVNPATH/trunk/"
+phpunit.xml
+phpunit.xml.dist
+.gitlab-ci.yml
+.travis.yml" "$SVNPATH/trunk/"
 
 echo "Changing directory to SVN and committing to trunk"
 cd $SVNPATH/trunk/
